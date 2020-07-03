@@ -1,0 +1,14 @@
+25/11/2018 23:07:45 --- resetControls triggered
+25/11/2018 23:07:45 --- Login controls visible
+25/11/2018 23:07:45 --- Focus changed to Program started
+25/11/2018 23:07:45 --- Program started
+25/11/2018 23:07:48 --- resetControls triggered
+25/11/2018 23:07:48 --- SELECT * FROM `tblBookings` WHERE `bookingDateTime` >= CURDATE() sql run
+25/11/2018 23:07:48 --- Focus changed to landing
+25/11/2018 23:07:48 --- show bookings
+25/11/2018 23:07:52 --- resetControls triggered
+25/11/2018 23:07:52 --- SELECT * FROM `tblBookings` WHERE `bookingDateTime` >= CURDATE() sql run
+25/11/2018 23:07:52 --- Focus changed to landing
+25/11/2018 23:08:02 --- resetControls triggered
+25/11/2018 23:08:02 --- Focus changed to Exit
+25/11/2018 23:08:02 --- application exit request
