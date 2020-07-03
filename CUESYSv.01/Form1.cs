@@ -38,10 +38,10 @@ namespace CUESYSv._01
         {
             try
             {
-                mysqlConn.varConfigServer = "ac8453.cucstudents.org";
-                mysqlConn.varConfigDatabase = "ac8453_CUEsys";
-                mysqlConn.varConfigUser = "ac8453_CUEDadmin";
-                mysqlConn.varConfigPass = "Password123!";
+                mysqlConn.varConfigServer = "adeosun2.cucstudents.org";
+                mysqlConn.varConfigDatabase = "adeosun2_CUEsys";
+                mysqlConn.varConfigUser = "adeosun2";
+                mysqlConn.varConfigPass = "Naomi2403%";
                 return true;
             }
             catch { return false; }
