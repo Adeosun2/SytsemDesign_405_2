@@ -24,7 +24,7 @@ namespace CUESYSv._01
 
         ///// VARIABLES START //////////////////////////////////////////////////////
         dbConn mysqlConn = new dbConn();
-        private string varFloor;
+        private string seatNumber;
         private string varRoom;
         ///// VARIABLES END ////////////////////////////////////////////////////////
 
@@ -63,7 +63,7 @@ namespace CUESYSv._01
                     break;
                 case "landing":
                     dgRoomBookingsSummary.Visible = true;
-                    dbReturn("SELECT * FROM `tblBookings` WHERE `bookingDateTime` >= CURDATE()");
+                    dbReturn("SELECT * FROM `tblBookings`");
                     break;
                 case "Book Room":
                     panFloorLayout.Visible = true;
@@ -126,26 +126,7 @@ namespace CUESYSv._01
         public void createBooking(string room)
         {
             resetControls("");
-            switch (cbFloor.Text)
-            {
-                case "Ground":
-                    varFloor = "G";
-                    break;
-                case "First":
-                    varFloor = "1";
-                    break;
-                case "Second":
-                    varFloor = "2";
-                    break;
-                case "Third":
-                    varFloor = "3";
-                    break;
-                case "Fourth":
-                    varFloor = "4";
-                    break;
-                default:
-                    break;
-            }
+            seatNumber = cbFloor.Text;
             lbBookingInfo.Visible = true;
             label1.Visible = true;
             label2.Visible = true;
@@ -159,7 +140,7 @@ namespace CUESYSv._01
             cbPaid.Visible = true;
             btBook.Visible = true;
             mcDate.MaxSelectionCount = 1;
-            lbBookingInfo.Text = cbBuilding.Text + " - " + varFloor + room;
+            lbBookingInfo.Text = cbBuilding.Text + " - " + seatNumber + room;
             varRoom = room;
         }
         ///// METHODS END //////////////////////////////////////////////////////////
@@ -392,9 +373,14 @@ namespace CUESYSv._01
             else { varPaid = "N"; }
             if (mysqlConn.connOpen() == true)
             {
-                mysqlConn.insertBooking(tbCustomer.Text, cbBuilding.Text, varFloor, varRoom, varDateTime, tbCost.Text, varPaid);
+                mysqlConn.insertBooking(tbCustomer.Text, cbBuilding.Text, seatNumber, varRoom, varDateTime, tbCost.Text, varPaid);
             }
             resetControls("landing");
+        }
+
+        private void cbFloor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
         ///// EVENTS END ///////////////////////////////////////////////////////////
     }
