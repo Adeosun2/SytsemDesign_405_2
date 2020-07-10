@@ -813,7 +813,7 @@
             this.MainMenuStrip = this.mainMenu;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            this.Text = "Book Flight2";
+            this.Text = "Book Flight2_";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panClock.ResumeLayout(false);
             this.panClock.PerformLayout();
