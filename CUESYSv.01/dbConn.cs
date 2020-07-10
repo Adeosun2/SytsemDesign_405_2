@@ -73,8 +73,9 @@ namespace CUESYSv._01
         public void insertCustomer(string custContact, string custEmail, string custTel, string custAddr1, string custAddr2, string custTownCity, string custPostcode)
         {
             MySqlCommand comm = conn.CreateCommand();
-            comm.CommandText = "INSERT INTO `tblCustomer` (`custContact`, `custEmail`, `custTel`, `custAddr1`, `custAddr2`, `custTownCity`, `custPostcode`) VALUES (@custContact, @custEmail, @custTel, @custAddr1, @custAddr2, @custTownCity, @custPostcode);";
+            comm.CommandText = "INSERT INTO `tblCustomer` (`custContact`, `custEmail`, `custTel`, `custAddr1`, `custAddr2`, `custTownCity`, `custPostcode`) VALUES (@custContact, @clientAge, @custEmail, @custTel, @custAddr1, @custAddr2, @custTownCity, @custPostcode);";
             comm.Parameters.AddWithValue("@custContact", custContact);
+        
             comm.Parameters.AddWithValue("@custEmail", custEmail);
             comm.Parameters.AddWithValue("@custTel", custTel);
             comm.Parameters.AddWithValue("@custAddr1", custAddr1);
@@ -84,19 +85,42 @@ namespace CUESYSv._01
             comm.ExecuteNonQuery();
             connClose();
         }
-        public void insertBooking(string custContact, string bookingBuilding, string bookingFloor, string bookingRoom, string bookingDateTime, string bookingCost, string bookingPaid)
+
+        public void insertbooking(string firstName, string lastName, string Airline, string Origin, string Destination, string flightNunmber, string bookingDate, string bookingTime, string bookingCost, string bookingPaid)
         {
             MySqlCommand comm = conn.CreateCommand();
-            comm.CommandText = "INSERT INTO `tblBookings` (`custContact`, `bookingBuilding`, `bookingFloor`, `bookingRoom`, `bookingDateTime`, `bookingCost`, `bookingPaid`) VALUES (@custContact, @bookingBuilding, @bookingFloor, @bookingRoom, @bookingDateTime, @bookingCost, @bookingPaid);";
+            comm.CommandText = "INSERT INTO `tblBookings` (`firstName`, `lastName`, 'Airline', 'Origin', 'Destination', 'flightNumber', 'bookingDate', 'bookingTime' 'bookingCost'. 'bookingPaid') VALUES (@firstName, @lastName, @Airline, @Origin, @Destination, @flightNumber, @bookingDate, @bookingTime, @bookingCost, @bookingPaid);";
+            comm.Parameters.AddWithValue("@firstName", firstName);
+            comm.Parameters.AddWithValue("@lastName", lastName);
+            comm.Parameters.AddWithValue("@Airlinet", Airline);
+            comm.Parameters.AddWithValue("@Origin", Origin);
+            comm.Parameters.AddWithValue("@Destination", Destination);
+            comm.Parameters.AddWithValue("@flightNumber", flightNunmber);
+            comm.Parameters.AddWithValue("@bookingDate", bookingDate);
+            comm.Parameters.AddWithValue("@bookingTime", bookingTime);
+            comm.Parameters.AddWithValue("@bookingCost", bookingCost);
+            comm.Parameters.AddWithValue("@bookingPaid", bookingPaid);
+            comm.ExecuteNonQuery();
+            connClose();
+
+        }
+
+        public void insertBooking(string custContact, string bookingBuilding, string seatNumber, string flightNumber, string bookingDateTime, string bookingCost, string bookingPaid)
+        {
+            MySqlCommand comm = conn.CreateCommand();
+            comm.CommandText = "INSERT INTO `tblBookings` (`custContact`, `bookingBuilding`, `seatNumber`, `flightNumber`, `bookingDateTime`, `bookingCost`, `bookingPaid`) VALUES (@custContact, @bookingBuilding, @seatNumber, @flightNumber, @bookingDateTime, @bookingCost, @bookingPaid);";
             comm.Parameters.AddWithValue("@custContact", custContact);
             comm.Parameters.AddWithValue("@bookingBuilding", bookingBuilding);
-            comm.Parameters.AddWithValue("@bookingFloor", bookingFloor);
-            comm.Parameters.AddWithValue("@bookingRoom", bookingRoom);
+            comm.Parameters.AddWithValue("@seatNumber", seatNumber); //bookingFloor
+            comm.Parameters.AddWithValue("@flightNumber", flightNumber); //bookingRoom
             comm.Parameters.AddWithValue("@bookingDateTime", bookingDateTime);
             comm.Parameters.AddWithValue("@bookingCost", bookingCost);
             comm.Parameters.AddWithValue("@bookingPaid", bookingPaid);
             comm.ExecuteNonQuery();
             connClose();
+
+
+
         }
         public void deleteBooking(string id)
         {

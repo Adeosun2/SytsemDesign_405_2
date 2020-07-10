@@ -1,4 +1,4 @@
-﻿namespace CUESYSv._01
+﻿namespace CueSYSv._01
 {
     partial class Form1
     {
@@ -54,6 +54,7 @@
             this.viewBookingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btRoomB = new System.Windows.Forms.Button();
             this.panFloorLayout = new System.Windows.Forms.Panel();
+            this.cbFloor = new System.Windows.Forms.MaskedTextBox();
             this.btRoomG = new System.Windows.Forms.Button();
             this.btRoomE = new System.Windows.Forms.Button();
             this.btRoomC = new System.Windows.Forms.Button();
@@ -61,7 +62,6 @@
             this.btRoomH = new System.Windows.Forms.Button();
             this.btRoomF = new System.Windows.Forms.Button();
             this.btRoomD = new System.Windows.Forms.Button();
-            this.cbFloor = new System.Windows.Forms.ComboBox();
             this.cbBuilding = new System.Windows.Forms.ComboBox();
             this.lbCustContact = new System.Windows.Forms.Label();
             this.tbCustContact = new System.Windows.Forms.TextBox();
@@ -93,6 +93,7 @@
             this.tbCustomer = new System.Windows.Forms.TextBox();
             this.tbCost = new System.Windows.Forms.TextBox();
             this.lbBookingInfo = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panClock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgRoomBookingsSummary)).BeginInit();
             this.mainMenu.SuspendLayout();
@@ -102,7 +103,7 @@
             // tbUserName
             // 
             this.tbUserName.Location = new System.Drawing.Point(269, 174);
-            this.tbUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbUserName.Margin = new System.Windows.Forms.Padding(4);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(132, 22);
             this.tbUserName.TabIndex = 0;
@@ -111,7 +112,7 @@
             // tbUserPass
             // 
             this.tbUserPass.Location = new System.Drawing.Point(269, 217);
-            this.tbUserPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbUserPass.Margin = new System.Windows.Forms.Padding(4);
             this.tbUserPass.Name = "tbUserPass";
             this.tbUserPass.Size = new System.Drawing.Size(132, 22);
             this.tbUserPass.TabIndex = 1;
@@ -147,11 +148,12 @@
             this.lbCueSys.Size = new System.Drawing.Size(348, 94);
             this.lbCueSys.TabIndex = 4;
             this.lbCueSys.Text = "CUE SYS";
+            this.lbCueSys.Click += new System.EventHandler(this.lbCueSys_Click);
             // 
             // btLogin
             // 
             this.btLogin.Location = new System.Drawing.Point(269, 331);
-            this.btLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btLogin.Name = "btLogin";
             this.btLogin.Size = new System.Drawing.Size(100, 28);
             this.btLogin.TabIndex = 5;
@@ -166,10 +168,11 @@
             this.panClock.Controls.Add(this.lbClockDate);
             this.panClock.Controls.Add(this.lbClockTime);
             this.panClock.Location = new System.Drawing.Point(861, 11);
-            this.panClock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panClock.Margin = new System.Windows.Forms.Padding(4);
             this.panClock.Name = "panClock";
             this.panClock.Size = new System.Drawing.Size(189, 68);
             this.panClock.TabIndex = 6;
+            this.panClock.Paint += new System.Windows.Forms.PaintEventHandler(this.panClock_Paint);
             // 
             // lbClockSeconds
             // 
@@ -213,7 +216,7 @@
             // 
             this.dgRoomBookingsSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgRoomBookingsSummary.Location = new System.Drawing.Point(16, 117);
-            this.dgRoomBookingsSummary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgRoomBookingsSummary.Margin = new System.Windows.Forms.Padding(4);
             this.dgRoomBookingsSummary.Name = "dgRoomBookingsSummary";
             this.dgRoomBookingsSummary.RowHeadersWidth = 51;
             this.dgRoomBookingsSummary.Size = new System.Drawing.Size(1035, 432);
@@ -299,14 +302,14 @@
             // bookRoomToolStripMenuItem
             // 
             this.bookRoomToolStripMenuItem.Name = "bookRoomToolStripMenuItem";
-            this.bookRoomToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
-            this.bookRoomToolStripMenuItem.Text = "Book Room";
+            this.bookRoomToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.bookRoomToolStripMenuItem.Text = "BookFlight";
             this.bookRoomToolStripMenuItem.Click += new System.EventHandler(this.bookRoomToolStripMenuItem_Click);
             // 
             // viewBookingsToolStripMenuItem
             // 
             this.viewBookingsToolStripMenuItem.Name = "viewBookingsToolStripMenuItem";
-            this.viewBookingsToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.viewBookingsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.viewBookingsToolStripMenuItem.Text = "View Bookings";
             this.viewBookingsToolStripMenuItem.Click += new System.EventHandler(this.viewBookingsToolStripMenuItem_Click);
             // 
@@ -317,7 +320,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btRoomB.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btRoomB.Location = new System.Drawing.Point(207, 6);
-            this.btRoomB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btRoomB.Margin = new System.Windows.Forms.Padding(4);
             this.btRoomB.Name = "btRoomB";
             this.btRoomB.Size = new System.Drawing.Size(147, 123);
             this.btRoomB.TabIndex = 9;
@@ -328,6 +331,7 @@
             // 
             this.panFloorLayout.BackgroundImage = global::CUESYSv._01.Properties.Resources.GROUND_FLOOR;
             this.panFloorLayout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panFloorLayout.Controls.Add(this.cbFloor);
             this.panFloorLayout.Controls.Add(this.btRoomG);
             this.panFloorLayout.Controls.Add(this.btRoomE);
             this.panFloorLayout.Controls.Add(this.btRoomC);
@@ -337,10 +341,18 @@
             this.panFloorLayout.Controls.Add(this.btRoomD);
             this.panFloorLayout.Controls.Add(this.btRoomB);
             this.panFloorLayout.Location = new System.Drawing.Point(115, 111);
-            this.panFloorLayout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panFloorLayout.Margin = new System.Windows.Forms.Padding(4);
             this.panFloorLayout.Name = "panFloorLayout";
             this.panFloorLayout.Size = new System.Drawing.Size(803, 384);
             this.panFloorLayout.TabIndex = 10;
+            this.panFloorLayout.Paint += new System.Windows.Forms.PaintEventHandler(this.panFloorLayout_Paint);
+            // 
+            // cbFloor
+            // 
+            this.cbFloor.Location = new System.Drawing.Point(548, 7);
+            this.cbFloor.Name = "cbFloor";
+            this.cbFloor.Size = new System.Drawing.Size(100, 22);
+            this.cbFloor.TabIndex = 44;
             // 
             // btRoomG
             // 
@@ -349,7 +361,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btRoomG.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btRoomG.Location = new System.Drawing.Point(548, 254);
-            this.btRoomG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btRoomG.Margin = new System.Windows.Forms.Padding(4);
             this.btRoomG.Name = "btRoomG";
             this.btRoomG.Size = new System.Drawing.Size(147, 123);
             this.btRoomG.TabIndex = 16;
@@ -363,7 +375,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btRoomE.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btRoomE.Location = new System.Drawing.Point(400, 254);
-            this.btRoomE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btRoomE.Margin = new System.Windows.Forms.Padding(4);
             this.btRoomE.Name = "btRoomE";
             this.btRoomE.Size = new System.Drawing.Size(147, 123);
             this.btRoomE.TabIndex = 15;
@@ -377,7 +389,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btRoomC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btRoomC.Location = new System.Drawing.Point(255, 254);
-            this.btRoomC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btRoomC.Margin = new System.Windows.Forms.Padding(4);
             this.btRoomC.Name = "btRoomC";
             this.btRoomC.Size = new System.Drawing.Size(147, 123);
             this.btRoomC.TabIndex = 14;
@@ -391,7 +403,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btRoomA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btRoomA.Location = new System.Drawing.Point(107, 254);
-            this.btRoomA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btRoomA.Margin = new System.Windows.Forms.Padding(4);
             this.btRoomA.Name = "btRoomA";
             this.btRoomA.Size = new System.Drawing.Size(147, 123);
             this.btRoomA.TabIndex = 13;
@@ -405,7 +417,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btRoomH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btRoomH.Location = new System.Drawing.Point(648, 6);
-            this.btRoomH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btRoomH.Margin = new System.Windows.Forms.Padding(4);
             this.btRoomH.Name = "btRoomH";
             this.btRoomH.Size = new System.Drawing.Size(147, 123);
             this.btRoomH.TabIndex = 12;
@@ -419,7 +431,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btRoomF.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btRoomF.Location = new System.Drawing.Point(500, 6);
-            this.btRoomF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btRoomF.Margin = new System.Windows.Forms.Padding(4);
             this.btRoomF.Name = "btRoomF";
             this.btRoomF.Size = new System.Drawing.Size(147, 123);
             this.btRoomF.TabIndex = 11;
@@ -433,27 +445,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btRoomD.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btRoomD.Location = new System.Drawing.Point(355, 6);
-            this.btRoomD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btRoomD.Margin = new System.Windows.Forms.Padding(4);
             this.btRoomD.Name = "btRoomD";
             this.btRoomD.Size = new System.Drawing.Size(147, 123);
             this.btRoomD.TabIndex = 10;
             this.btRoomD.UseVisualStyleBackColor = true;
             this.btRoomD.Click += new System.EventHandler(this.btRoomD_Click);
-            // 
-            // cbFloor
-            // 
-            this.cbFloor.FormattingEnabled = true;
-            this.cbFloor.Items.AddRange(new object[] {
-            "Ground",
-            "First",
-            "Second",
-            "Third",
-            "Fourth"});
-            this.cbFloor.Location = new System.Drawing.Point(493, 111);
-            this.cbFloor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cbFloor.Name = "cbFloor";
-            this.cbFloor.Size = new System.Drawing.Size(160, 24);
-            this.cbFloor.TabIndex = 11;
             // 
             // cbBuilding
             // 
@@ -463,7 +460,7 @@
             "Jaguar",
             "William Lyons"});
             this.cbBuilding.Location = new System.Drawing.Point(324, 111);
-            this.cbBuilding.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbBuilding.Margin = new System.Windows.Forms.Padding(4);
             this.cbBuilding.Name = "cbBuilding";
             this.cbBuilding.Size = new System.Drawing.Size(160, 24);
             this.cbBuilding.TabIndex = 12;
@@ -481,7 +478,7 @@
             // tbCustContact
             // 
             this.tbCustContact.Location = new System.Drawing.Point(611, 186);
-            this.tbCustContact.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCustContact.Margin = new System.Windows.Forms.Padding(4);
             this.tbCustContact.Name = "tbCustContact";
             this.tbCustContact.Size = new System.Drawing.Size(132, 22);
             this.tbCustContact.TabIndex = 14;
@@ -489,7 +486,7 @@
             // tbCustEmail
             // 
             this.tbCustEmail.Location = new System.Drawing.Point(611, 217);
-            this.tbCustEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCustEmail.Margin = new System.Windows.Forms.Padding(4);
             this.tbCustEmail.Name = "tbCustEmail";
             this.tbCustEmail.Size = new System.Drawing.Size(132, 22);
             this.tbCustEmail.TabIndex = 16;
@@ -507,7 +504,7 @@
             // tbCustTel
             // 
             this.tbCustTel.Location = new System.Drawing.Point(611, 249);
-            this.tbCustTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCustTel.Margin = new System.Windows.Forms.Padding(4);
             this.tbCustTel.Name = "tbCustTel";
             this.tbCustTel.Size = new System.Drawing.Size(132, 22);
             this.tbCustTel.TabIndex = 18;
@@ -525,7 +522,7 @@
             // tbCustTownCity
             // 
             this.tbCustTownCity.Location = new System.Drawing.Point(611, 343);
-            this.tbCustTownCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCustTownCity.Margin = new System.Windows.Forms.Padding(4);
             this.tbCustTownCity.Name = "tbCustTownCity";
             this.tbCustTownCity.Size = new System.Drawing.Size(132, 22);
             this.tbCustTownCity.TabIndex = 24;
@@ -543,7 +540,7 @@
             // tbCustAdd2
             // 
             this.tbCustAdd2.Location = new System.Drawing.Point(611, 311);
-            this.tbCustAdd2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCustAdd2.Margin = new System.Windows.Forms.Padding(4);
             this.tbCustAdd2.Name = "tbCustAdd2";
             this.tbCustAdd2.Size = new System.Drawing.Size(132, 22);
             this.tbCustAdd2.TabIndex = 22;
@@ -561,7 +558,7 @@
             // tbCustAdd1
             // 
             this.tbCustAdd1.Location = new System.Drawing.Point(611, 281);
-            this.tbCustAdd1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCustAdd1.Margin = new System.Windows.Forms.Padding(4);
             this.tbCustAdd1.Name = "tbCustAdd1";
             this.tbCustAdd1.Size = new System.Drawing.Size(132, 22);
             this.tbCustAdd1.TabIndex = 20;
@@ -579,7 +576,7 @@
             // tbCustPostcode
             // 
             this.tbCustPostcode.Location = new System.Drawing.Point(611, 375);
-            this.tbCustPostcode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCustPostcode.Margin = new System.Windows.Forms.Padding(4);
             this.tbCustPostcode.Name = "tbCustPostcode";
             this.tbCustPostcode.Size = new System.Drawing.Size(132, 22);
             this.tbCustPostcode.TabIndex = 26;
@@ -607,7 +604,7 @@
             // btCustSave
             // 
             this.btCustSave.Location = new System.Drawing.Point(611, 409);
-            this.btCustSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btCustSave.Margin = new System.Windows.Forms.Padding(4);
             this.btCustSave.Name = "btCustSave";
             this.btCustSave.Size = new System.Drawing.Size(133, 28);
             this.btCustSave.TabIndex = 28;
@@ -618,7 +615,7 @@
             // btCustUpdate
             // 
             this.btCustUpdate.Location = new System.Drawing.Point(609, 410);
-            this.btCustUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btCustUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btCustUpdate.Name = "btCustUpdate";
             this.btCustUpdate.Size = new System.Drawing.Size(133, 28);
             this.btCustUpdate.TabIndex = 29;
@@ -628,7 +625,7 @@
             // btCustDelete
             // 
             this.btCustDelete.Location = new System.Drawing.Point(609, 446);
-            this.btCustDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btCustDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btCustDelete.Name = "btCustDelete";
             this.btCustDelete.Size = new System.Drawing.Size(133, 28);
             this.btCustDelete.TabIndex = 30;
@@ -638,7 +635,7 @@
             // btBook
             // 
             this.btBook.Location = new System.Drawing.Point(689, 508);
-            this.btBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btBook.Margin = new System.Windows.Forms.Padding(4);
             this.btBook.Name = "btBook";
             this.btBook.Size = new System.Drawing.Size(100, 28);
             this.btBook.TabIndex = 43;
@@ -649,7 +646,7 @@
             // tbTime
             // 
             this.tbTime.Location = new System.Drawing.Point(487, 421);
-            this.tbTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTime.Margin = new System.Windows.Forms.Padding(4);
             this.tbTime.Mask = "00:00";
             this.tbTime.Name = "tbTime";
             this.tbTime.Size = new System.Drawing.Size(52, 22);
@@ -723,7 +720,7 @@
             // 
             this.cbPaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPaid.Location = new System.Drawing.Point(496, 508);
-            this.cbPaid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbPaid.Margin = new System.Windows.Forms.Padding(4);
             this.cbPaid.Name = "cbPaid";
             this.cbPaid.Size = new System.Drawing.Size(33, 31);
             this.cbPaid.TabIndex = 35;
@@ -733,7 +730,7 @@
             // 
             this.tbCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCustomer.Location = new System.Drawing.Point(487, 160);
-            this.tbCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.tbCustomer.Name = "tbCustomer";
             this.tbCustomer.Size = new System.Drawing.Size(301, 34);
             this.tbCustomer.TabIndex = 34;
@@ -742,7 +739,7 @@
             // 
             this.tbCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCost.Location = new System.Drawing.Point(487, 453);
-            this.tbCost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCost.Margin = new System.Windows.Forms.Padding(4);
             this.tbCost.Name = "tbCost";
             this.tbCost.Size = new System.Drawing.Size(301, 34);
             this.tbCost.TabIndex = 33;
@@ -754,15 +751,24 @@
             this.lbBookingInfo.Location = new System.Drawing.Point(491, 118);
             this.lbBookingInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbBookingInfo.Name = "lbBookingInfo";
-            this.lbBookingInfo.Size = new System.Drawing.Size(157, 31);
+            this.lbBookingInfo.Size = new System.Drawing.Size(0, 31);
             this.lbBookingInfo.TabIndex = 32;
-            this.lbBookingInfo.Text = "xxxxxxxxxxx";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(674, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 44;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btBook);
             this.Controls.Add(this.tbTime);
             this.Controls.Add(this.label5);
@@ -794,7 +800,6 @@
             this.Controls.Add(this.tbCustContact);
             this.Controls.Add(this.lbCustContact);
             this.Controls.Add(this.cbBuilding);
-            this.Controls.Add(this.cbFloor);
             this.Controls.Add(this.panFloorLayout);
             this.Controls.Add(this.dgRoomBookingsSummary);
             this.Controls.Add(this.panClock);
@@ -806,7 +811,7 @@
             this.Controls.Add(this.tbUserName);
             this.Controls.Add(this.mainMenu);
             this.MainMenuStrip = this.mainMenu;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -816,6 +821,7 @@
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             this.panFloorLayout.ResumeLayout(false);
+            this.panFloorLayout.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -852,7 +858,6 @@
         private System.Windows.Forms.Button btRoomH;
         private System.Windows.Forms.Button btRoomF;
         private System.Windows.Forms.Button btRoomD;
-        private System.Windows.Forms.ComboBox cbFloor;
         private System.Windows.Forms.ComboBox cbBuilding;
         private System.Windows.Forms.ToolStripMenuItem createCustomerToolStripMenuItem;
         private System.Windows.Forms.Label lbCustContact;
@@ -887,6 +892,8 @@
         private System.Windows.Forms.TextBox tbCustomer;
         private System.Windows.Forms.TextBox tbCost;
         private System.Windows.Forms.Label lbBookingInfo;
+        private System.Windows.Forms.MaskedTextBox cbFloor;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -3,8 +3,10 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.IO;
+using CUESYSv._01;
+using System.Linq.Expressions;
 
-namespace CUESYSv._01
+namespace CueSYSv._01
 {
     public partial class Form1 : Form
     {
@@ -24,6 +26,7 @@ namespace CUESYSv._01
 
         ///// VARIABLES START //////////////////////////////////////////////////////
         dbConn mysqlConn = new dbConn();
+
         private string seatNumber;
         private string varRoom;
         ///// VARIABLES END ////////////////////////////////////////////////////////
@@ -39,7 +42,7 @@ namespace CUESYSv._01
             try
             {
                 mysqlConn.varConfigServer = "adeosun2.cucstudents.org";
-                mysqlConn.varConfigDatabase = "adeosun2_CUEsys";
+                mysqlConn.varConfigDatabase = "adeosun2_Cuesys";
                 mysqlConn.varConfigUser = "adeosun2";
                 mysqlConn.varConfigPass = "Naomi2403%";
                 return true;
@@ -53,7 +56,7 @@ namespace CUESYSv._01
             foreach (Control control in this.Controls) { control.Visible = false; }//Hide all controls
             lbCueSys.Visible = true;//Show logo
             panClock.Visible = true;//Show clock panel
-            mainMenu.Visible = true;//Show menu
+           
             foreach (var clockLbl in panClock.Controls.OfType<Label>()){ clockLbl.Visible = true; };//Show clock in panel
             switch (newFocus)//Use control statement to selectively show controls based on newFocus argument
             {
@@ -164,6 +167,8 @@ namespace CUESYSv._01
             dbConfig();
             mysqlConn.connect();
             resetControls("Program started");
+            button1.Visible = true;
+
             devLogs("Program started");
         }
 
@@ -181,7 +186,11 @@ namespace CUESYSv._01
             devLogs("Login button clicked");
             //User+Pass check, not secure and only allows one login
             if (tbUserName.Text == "admin" && tbUserPass.Text == "admin")
-            { resetControls("landing"); devLogs("Login success for user " + tbUserName.Text); }//Login success
+            { resetControls("landing"); devLogs("Login success for user " + tbUserName.Text);
+
+                mainMenu.Visible = true;//Show menu
+
+            }//Login success
             else
             { MessageBox.Show("Sorry, wrong password/user combo!"); devLogs("Login failure for user " + tbUserName.Text); }//Login failure
             tbUserName.Text = ""; tbUserPass.Text = ""; //Clear logon credentials
@@ -267,7 +276,10 @@ namespace CUESYSv._01
 
         private void bookRoomToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            resetControls("Book Room");devLogs("book room request");
+            resetControls("Book Room");//resetControls("Book Room"); 
+            Form3 f3 = new Form3();
+            f3.Visible=true;
+            devLogs("book room request");
         }
 
         private void btRoomA_Click(object sender, EventArgs e)
@@ -379,6 +391,21 @@ namespace CUESYSv._01
         }
 
         private void cbFloor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panClock_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbCueSys_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panFloorLayout_Paint(object sender, PaintEventArgs e)
         {
 
         }
