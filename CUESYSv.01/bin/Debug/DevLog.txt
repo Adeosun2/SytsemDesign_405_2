@@ -1,9 +1,10 @@
-10/07/2020 10:49:17 --- resetControls triggered
-10/07/2020 10:49:17 --- Login controls visible
-10/07/2020 10:49:17 --- Focus changed to Program started
-10/07/2020 10:49:17 --- Program started
-10/07/2020 10:49:24 --- Login button clicked
-10/07/2020 10:49:24 --- resetControls triggered
-10/07/2020 10:49:24 --- SELECT * FROM `tblBookings` sql run
-10/07/2020 10:49:25 --- Focus changed to landing
-10/07/2020 10:49:25 --- Login success for user admin
+10/07/2020 11:10:21 --- resetControls triggered
+10/07/2020 11:10:21 --- Login controls visible
+10/07/2020 11:10:21 --- Focus changed to Program started
+10/07/2020 11:10:21 --- Program started
+10/07/2020 11:10:29 --- Login button clicked
+10/07/2020 11:10:29 --- resetControls triggered
+10/07/2020 11:10:29 --- SELECT * FROM `tblBookings` sql run
+10/07/2020 11:10:29 --- Focus changed to landing
+10/07/2020 11:10:29 --- Login success for user admin
+10/07/2020 11:10:29 --- enter key detected in tbUserPass
