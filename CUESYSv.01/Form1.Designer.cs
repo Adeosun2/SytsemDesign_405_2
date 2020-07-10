@@ -302,14 +302,14 @@
             // bookRoomToolStripMenuItem
             // 
             this.bookRoomToolStripMenuItem.Name = "bookRoomToolStripMenuItem";
-            this.bookRoomToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.bookRoomToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.bookRoomToolStripMenuItem.Text = "BookFlight";
             this.bookRoomToolStripMenuItem.Click += new System.EventHandler(this.bookRoomToolStripMenuItem_Click);
             // 
             // viewBookingsToolStripMenuItem
             // 
             this.viewBookingsToolStripMenuItem.Name = "viewBookingsToolStripMenuItem";
-            this.viewBookingsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.viewBookingsToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.viewBookingsToolStripMenuItem.Text = "View Bookings";
             this.viewBookingsToolStripMenuItem.Click += new System.EventHandler(this.viewBookingsToolStripMenuItem_Click);
             // 
