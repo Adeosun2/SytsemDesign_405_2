@@ -93,7 +93,10 @@
             this.tbCustomer = new System.Windows.Forms.TextBox();
             this.tbCost = new System.Windows.Forms.TextBox();
             this.lbBookingInfo = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btLogout = new System.Windows.Forms.Button();
+            this.showMessageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbStatus = new System.Windows.Forms.TextBox();
+            this.btAdd = new System.Windows.Forms.Button();
             this.panClock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgRoomBookingsSummary)).BeginInit();
             this.mainMenu.SuspendLayout();
@@ -241,7 +244,8 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewDevLogsToolStripMenuItem,
             this.logoutToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.exitToolStripMenuItem,
+            this.showMessageToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
@@ -249,21 +253,21 @@
             // viewDevLogsToolStripMenuItem
             // 
             this.viewDevLogsToolStripMenuItem.Name = "viewDevLogsToolStripMenuItem";
-            this.viewDevLogsToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.viewDevLogsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.viewDevLogsToolStripMenuItem.Text = "View DevLogs";
             this.viewDevLogsToolStripMenuItem.Click += new System.EventHandler(this.viewDevLogsToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -279,14 +283,14 @@
             // createCustomerToolStripMenuItem
             // 
             this.createCustomerToolStripMenuItem.Name = "createCustomerToolStripMenuItem";
-            this.createCustomerToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.createCustomerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.createCustomerToolStripMenuItem.Text = "Create Customer";
             this.createCustomerToolStripMenuItem.Click += new System.EventHandler(this.createCustomerToolStripMenuItem_Click);
             // 
             // viewCustomersToolStripMenuItem
             // 
             this.viewCustomersToolStripMenuItem.Name = "viewCustomersToolStripMenuItem";
-            this.viewCustomersToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.viewCustomersToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.viewCustomersToolStripMenuItem.Text = "View Customers";
             this.viewCustomersToolStripMenuItem.Click += new System.EventHandler(this.viewCustomersToolStripMenuItem_Click);
             // 
@@ -302,14 +306,14 @@
             // bookRoomToolStripMenuItem
             // 
             this.bookRoomToolStripMenuItem.Name = "bookRoomToolStripMenuItem";
-            this.bookRoomToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.bookRoomToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.bookRoomToolStripMenuItem.Text = "BookFlight";
             this.bookRoomToolStripMenuItem.Click += new System.EventHandler(this.bookRoomToolStripMenuItem_Click);
             // 
             // viewBookingsToolStripMenuItem
             // 
             this.viewBookingsToolStripMenuItem.Name = "viewBookingsToolStripMenuItem";
-            this.viewBookingsToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.viewBookingsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.viewBookingsToolStripMenuItem.Text = "View Bookings";
             this.viewBookingsToolStripMenuItem.Click += new System.EventHandler(this.viewBookingsToolStripMenuItem_Click);
             // 
@@ -639,7 +643,7 @@
             this.btBook.Name = "btBook";
             this.btBook.Size = new System.Drawing.Size(100, 28);
             this.btBook.TabIndex = 43;
-            this.btBook.Text = "BOOK";
+            this.btBook.Text = "Book";
             this.btBook.UseVisualStyleBackColor = true;
             this.btBook.Click += new System.EventHandler(this.btBook_Click);
             // 
@@ -754,21 +758,48 @@
             this.lbBookingInfo.Size = new System.Drawing.Size(0, 31);
             this.lbBookingInfo.TabIndex = 32;
             // 
-            // button1
+            // btLogout
             // 
-            this.button1.Location = new System.Drawing.Point(674, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 44;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btLogout.Location = new System.Drawing.Point(713, 15);
+            this.btLogout.Name = "btLogout";
+            this.btLogout.Size = new System.Drawing.Size(75, 23);
+            this.btLogout.TabIndex = 44;
+            this.btLogout.Text = "Logout";
+            this.btLogout.UseVisualStyleBackColor = true;
+            this.btLogout.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // showMessageToolStripMenuItem
+            // 
+            this.showMessageToolStripMenuItem.Name = "showMessageToolStripMenuItem";
+            this.showMessageToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.showMessageToolStripMenuItem.Text = "Show Message";
+            this.showMessageToolStripMenuItem.Click += new System.EventHandler(this.showMessageToolStripMenuItem_Click);
+            // 
+            // tbStatus
+            // 
+            this.tbStatus.Location = new System.Drawing.Point(713, 57);
+            this.tbStatus.Name = "tbStatus";
+            this.tbStatus.Size = new System.Drawing.Size(100, 22);
+            this.tbStatus.TabIndex = 45;
+            // 
+            // btAdd
+            // 
+            this.btAdd.Location = new System.Drawing.Point(813, 85);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(75, 23);
+            this.btAdd.TabIndex = 46;
+            this.btAdd.Text = "Add ";
+            this.btAdd.UseCompatibleTextRendering = true;
+            this.btAdd.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btAdd);
+            this.Controls.Add(this.tbStatus);
+            this.Controls.Add(this.btLogout);
             this.Controls.Add(this.btBook);
             this.Controls.Add(this.tbTime);
             this.Controls.Add(this.label5);
@@ -776,7 +807,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.mcDate);
             this.Controls.Add(this.cbPaid);
             this.Controls.Add(this.tbCustomer);
             this.Controls.Add(this.tbCost);
@@ -810,10 +840,11 @@
             this.Controls.Add(this.tbUserPass);
             this.Controls.Add(this.tbUserName);
             this.Controls.Add(this.mainMenu);
+            this.Controls.Add(this.mcDate);
             this.MainMenuStrip = this.mainMenu;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            this.Text = "Book Flight2_";
+            this.Text = "Book Flight2";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panClock.ResumeLayout(false);
             this.panClock.PerformLayout();
@@ -893,7 +924,10 @@
         private System.Windows.Forms.TextBox tbCost;
         private System.Windows.Forms.Label lbBookingInfo;
         private System.Windows.Forms.MaskedTextBox cbFloor;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btLogout;
+        private System.Windows.Forms.ToolStripMenuItem showMessageToolStripMenuItem;
+        private System.Windows.Forms.TextBox tbStatus;
+        private System.Windows.Forms.Button btAdd;
     }
 }
 

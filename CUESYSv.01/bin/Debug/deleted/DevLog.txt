@@ -1,0 +1,4 @@
+10/07/2020 11:35:08 --- resetControls triggered
+10/07/2020 11:35:08 --- Login controls visible
+10/07/2020 11:35:08 --- Focus changed to Program started
+10/07/2020 11:35:08 --- Program started

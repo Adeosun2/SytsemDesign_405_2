@@ -89,10 +89,10 @@ namespace CUESYSv._01
         public void insertbooking(string firstName, string lastName, string Airline, string Origin, string Destination, string flightNunmber, string bookingDate, string bookingTime, string bookingCost, string bookingPaid)
         {
             MySqlCommand comm = conn.CreateCommand();
-            comm.CommandText = "INSERT INTO `tblBookings` (`firstName`, `lastName`, 'Airline', 'Origin', 'Destination', 'flightNumber', 'bookingDate', 'bookingTime' 'bookingCost'. 'bookingPaid') VALUES (@firstName, @lastName, @Airline, @Origin, @Destination, @flightNumber, @bookingDate, @bookingTime, @bookingCost, @bookingPaid);";
+            comm.CommandText = "INSERT INTO `tblBookings` (`FirstName`, `LastName`, `Airline`, `Origin`, `Destination`, `flightNumber`, `bookingDate`, `bookingTime`, `bookingCost`, `bookingPaid`) VALUES (@FirstName, @LastName, @Airline, @Origin, @Destination, @flightNumber, @bookingDate, @bookingTime, @bookingCost, @bookingPaid);";
             comm.Parameters.AddWithValue("@firstName", firstName);
             comm.Parameters.AddWithValue("@lastName", lastName);
-            comm.Parameters.AddWithValue("@Airlinet", Airline);
+            comm.Parameters.AddWithValue("@Airline", Airline);
             comm.Parameters.AddWithValue("@Origin", Origin);
             comm.Parameters.AddWithValue("@Destination", Destination);
             comm.Parameters.AddWithValue("@flightNumber", flightNunmber);
@@ -105,10 +105,10 @@ namespace CUESYSv._01
 
         }
 
-        public void insertBooking(string custContact, string bookingBuilding, string seatNumber, string flightNumber, string bookingDateTime, string bookingCost, string bookingPaid)
+        public void insertBooking(string custContact, string bookingBuilding, string seatNumber, string flightNumber, string bookingDateTime, string bookingCost, string bookingPaid, string status)
         {
             MySqlCommand comm = conn.CreateCommand();
-            comm.CommandText = "INSERT INTO `tblBookings` (`custContact`, `bookingBuilding`, `seatNumber`, `flightNumber`, `bookingDateTime`, `bookingCost`, `bookingPaid`) VALUES (@custContact, @bookingBuilding, @seatNumber, @flightNumber, @bookingDateTime, @bookingCost, @bookingPaid);";
+            comm.CommandText = "INSERT INTO `tblBookings` (`custContact`, `bookingBuilding`, `seatNumber`, `flightNumber`, `bookingDateTime`, `bookingCost`, `bookingPaid`, `Status`) VALUES (@custContact, @bookingBuilding, @seatNumber, @flightNumber, @bookingDateTime, @bookingCost, @bookingPaid,@Status);";
             comm.Parameters.AddWithValue("@custContact", custContact);
             comm.Parameters.AddWithValue("@bookingBuilding", bookingBuilding);
             comm.Parameters.AddWithValue("@seatNumber", seatNumber); //bookingFloor
@@ -116,6 +116,7 @@ namespace CUESYSv._01
             comm.Parameters.AddWithValue("@bookingDateTime", bookingDateTime);
             comm.Parameters.AddWithValue("@bookingCost", bookingCost);
             comm.Parameters.AddWithValue("@bookingPaid", bookingPaid);
+            comm.Parameters.AddWithValue("@Status", status);
             comm.ExecuteNonQuery();
             connClose();
 

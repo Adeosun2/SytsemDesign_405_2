@@ -1,4 +1,19 @@
-10/07/2020 11:30:05 --- resetControls triggered
-10/07/2020 11:30:05 --- Login controls visible
-10/07/2020 11:30:05 --- Focus changed to Program started
-10/07/2020 11:30:05 --- Program started
+11/07/2020 09:18:01 --- resetControls triggered
+11/07/2020 09:18:01 --- Login controls visible
+11/07/2020 09:18:01 --- Focus changed to Login screen
+11/07/2020 09:18:01 --- Program started
+11/07/2020 09:18:14 --- Login button clicked
+11/07/2020 09:18:14 --- resetControls triggered
+11/07/2020 09:18:14 --- SELECT * FROM `tblBookings` sql run
+11/07/2020 09:18:16 --- Focus changed to landing
+11/07/2020 09:18:16 --- Login success for user admin
+11/07/2020 09:18:54 --- resetControls triggered
+11/07/2020 09:18:54 --- Focus changed to Book Room
+11/07/2020 09:18:54 --- book room request
+11/07/2020 09:20:17 --- resetControls triggered
+11/07/2020 09:20:17 --- SELECT * FROM `tblBookings` sql run
+11/07/2020 09:20:17 --- Focus changed to landing
+11/07/2020 09:20:17 --- show bookings
+11/07/2020 09:21:19 --- resetControls triggered
+11/07/2020 09:21:20 --- Focus changed to create customer
+11/07/2020 09:21:20 --- create customer request

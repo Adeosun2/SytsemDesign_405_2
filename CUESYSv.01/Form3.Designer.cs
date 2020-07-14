@@ -110,7 +110,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(428, 64);
+            this.label7.Location = new System.Drawing.Point(388, 36);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 17);
             this.label7.TabIndex = 6;
@@ -119,7 +119,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(448, 178);
+            this.label8.Location = new System.Drawing.Point(391, 82);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 17);
             this.label8.TabIndex = 7;
@@ -157,7 +157,7 @@
             // 
             // Cost
             // 
-            this.Cost.Location = new System.Drawing.Point(542, 173);
+            this.Cost.Location = new System.Drawing.Point(451, 79);
             this.Cost.Name = "Cost";
             this.Cost.Size = new System.Drawing.Size(100, 22);
             this.Cost.TabIndex = 12;
@@ -185,7 +185,7 @@
             // 
             // Time
             // 
-            this.Time.Location = new System.Drawing.Point(542, 61);
+            this.Time.Location = new System.Drawing.Point(451, 31);
             this.Time.Name = "Time";
             this.Time.Size = new System.Drawing.Size(100, 22);
             this.Time.TabIndex = 17;
@@ -200,7 +200,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(448, 242);
+            this.label10.Location = new System.Drawing.Point(388, 138);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(36, 17);
             this.label10.TabIndex = 20;
@@ -209,7 +209,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(526, 247);
+            this.checkBox1.Location = new System.Drawing.Point(469, 139);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(18, 17);
             this.checkBox1.TabIndex = 21;
@@ -217,7 +217,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(516, 532);
+            this.button1.Location = new System.Drawing.Point(435, 301);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 22;

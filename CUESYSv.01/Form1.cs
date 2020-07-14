@@ -53,20 +53,29 @@ namespace CueSYSv._01
         public void resetControls(string newFocus)
         {//Hide all controls and only show those needed
             devLogs("resetControls triggered");
-            foreach (Control control in this.Controls) { control.Visible = false; }//Hide all controls
-            lbCueSys.Visible = true;//Show logo
-            panClock.Visible = true;//Show clock panel
+            foreach (Control control in this.Controls)
+            {control.Visible = false; } //Hide all controls
+             lbCueSys.Visible = true;//Show logo
+             panClock.Visible = true;//Show clock panel
+             mainMenu.Visible = true;//Show menu
            
             foreach (var clockLbl in panClock.Controls.OfType<Label>()){ clockLbl.Visible = true; };//Show clock in panel
             switch (newFocus)//Use control statement to selectively show controls based on newFocus argument
             {
-                case "Program started":
-                    lbUserName.Visible = lbUserPass.Visible = tbUserName.Visible = tbUserPass.Visible = btLogin.Visible = true;//make login controls visible
+                case "Show Message":
+                    MessageBox.Show("End of Year 1 !!");
+                    break;
+                case "Login screen":
+                    lbUserName.Visible = true;
+                    lbUserPass.Visible = true;
+                    tbUserName.Visible = true;
+                    tbUserPass.Visible = true;
+                    btLogin.Visible = true;//make login controls visible
                     devLogs("Login controls visible");
                     break;
                 case "landing":
                     dgRoomBookingsSummary.Visible = true;
-                    dbReturn("SELECT * FROM `tblBookings`");
+                    dbReturn("SELECT * FROM `tblBookings`");//dbReturn("SELECT * FROM `tblBookings`WHERE 'bookingDateTime' >= CURDATE()");
                     break;
                 case "Book Room":
                     panFloorLayout.Visible = true;
@@ -166,9 +175,7 @@ namespace CueSYSv._01
             this.ActiveControl = tbUserName;
             dbConfig();
             mysqlConn.connect();
-            resetControls("Program started");
-            button1.Visible = true;
-
+            resetControls("Login screen");
             devLogs("Program started");
         }
 
@@ -186,13 +193,14 @@ namespace CueSYSv._01
             devLogs("Login button clicked");
             //User+Pass check, not secure and only allows one login
             if (tbUserName.Text == "admin" && tbUserPass.Text == "admin")
-            { resetControls("landing"); devLogs("Login success for user " + tbUserName.Text);
+            { resetControls("landing"); devLogs("Login success for user " + tbUserName.Text); }//Login success
+            else
+            { MessageBox.Show("Sorry, wrong password/user combo!"); devLogs("Login failure for user " + tbUserName.Text);
 
                 mainMenu.Visible = true;//Show menu
-
-            }//Login success
-            else
-            { MessageBox.Show("Sorry, wrong password/user combo!"); devLogs("Login failure for user " + tbUserName.Text); }//Login failure
+                btLogout.Visible = true;
+            }         
+            //Login failure
             tbUserName.Text = ""; tbUserPass.Text = ""; //Clear logon credentials
         }
         private void tbUserName_KeyDown(object sender, KeyEventArgs e)
@@ -385,7 +393,7 @@ namespace CueSYSv._01
             else { varPaid = "N"; }
             if (mysqlConn.connOpen() == true)
             {
-                mysqlConn.insertBooking(tbCustomer.Text, cbBuilding.Text, seatNumber, varRoom, varDateTime, tbCost.Text, varPaid);
+                mysqlConn.insertBooking(tbCustomer.Text, cbBuilding.Text, seatNumber, varRoom, varDateTime, tbCost.Text, varPaid,tbStatus.Text);
             }
             resetControls("landing");
         }
@@ -408,6 +416,22 @@ namespace CueSYSv._01
         private void panFloorLayout_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btLogout_Click(object sender, EventArgs e)
+        {
+            resetControls("Program started ");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            resetControls("login screen");
+            tbUserName.Focus();
+        }
+
+        private void showMessageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            resetControls("Show Message");
         }
         ///// EVENTS END ///////////////////////////////////////////////////////////
     }
